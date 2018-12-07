@@ -29,12 +29,12 @@
       if ( (e.target.tagName !== 'A') || (e.target.host == window.location.host) ) return;
       trackOutboundLink(e.target);
     }
-    window.onload(function() {
+    window.onload = function() {
       if (document.addEventListener)
         document.addEventListener('click', onclickCallback, false);
       else
         document.attachEvent('onclick', onclickCallback);
-    });
+    };
   </script>
 </body>
 
