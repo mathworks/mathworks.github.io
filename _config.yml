@@ -1,0 +1,20 @@
+# Page values
+title: MathWorks Open Source on GitHub
+description: mathworks.github.io site
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+gems:
+  - jekyll-octicons
+
+assets:
+  assets:
+    - "*.svg"
+  sources:
+    - _assets/images
+    - _assets/javascripts
+    - _assets/stylesheets

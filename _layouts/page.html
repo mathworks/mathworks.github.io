@@ -1,0 +1,365 @@
+<html>
+<head>
+<title>MathWorks Open Source on GitHub - MATLAB & Simulink</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Description" content="Open source projects from MathWorks including, including MATLAB, Simulink, Reference Architecture, SimBiology, and ThingSpeak">
+<meta name="Keywords" content="matlab simulink simbiology thingspeak mathworks github open source">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/stylesheets/application.css">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js" integrity="sha256-1B6REXjRTNQ4IJEUSVYbAqEDRIYP8uKNUo+QgYZUzJM=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130565811-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-130565811-1');
+
+  var trackOutboundLink = function(url) {
+    gtag('event', 'click', {
+      'event_category': 'outbound',
+      'event_label': url,
+      'transport_type': 'beacon',
+      'event_callback': function(){document.location = url;}
+    });
+  }
+
+  // Helper to fall back on legacy code for older browsers
+  function isES6() {
+      try {
+          Function("() => {};");
+          return true;
+      } catch(exception) {
+          return false;
+      }
+  }
+</script>
+<nav class="navbar sticky-top bg-white navbar-expand-lg navbar-light ">
+  <div class="container px-0 mx-auto">
+  <a class="navbar-brand" href="#" onclick="$(window).scrollTop(0);"><img src="assets/images/pic-header-mathworks-logo.svg" height="28px"> <span class="open_source_title">Open Source</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" onclick="$(window).scrollTop(0);">Stats <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#repositories" onclick="">Repositories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#organizations">Organizations</a>
+      </li>
+      <!-- Not yet available -->
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Developer Tools</a>
+      </li> -->
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">How to Contribute</a>
+      </li> -->
+    </ul>
+
+  </div>
+  </div>
+</nav>
+<div id="main_container" class="main_container">
+
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-xs-12 col-md-6">
+          <h1>MathWorks Open Source<br>Contributions and Tools for Developers</h1>
+          <h3>Join Our Team - <a href="https://www.mathworks.com/company/jobs/opportunities/?s_eid=PEP_20230">MathWorks Careers</a></h3>
+          <!-- <a href="https://www.mathworks.com/opensource"><h3>www.mathworks.com/opensource</h3></a> -->
+          <div class="row">
+            <div class="org_stats">
+              <span class="org_stats_count" id="stats-org-count">...</span>
+              <span class="meta">Organizations</span>
+            </div>
+            <div class="org_stats">
+              <span class="org_stats_count" id="stats-repo-count">...</span>
+              <span class="meta">Repositories</span>
+            </div>
+            <div class="org_stats">
+              <span class="org_stats_count" id="stats-ctrb-count">...</span>
+              <span class="meta">Contributors</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="hidden-xs col-sm-1"></div>
+        <div class="col-xs-12 col-sm-12 col-md-5 ">
+          <div class="contrib_card float-right">
+            <h3>Most Active Contributors</h3>
+            <div class="my-3" id="contributor-avatars">
+              <!-- AJAX populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a name="repositories" class="anchor"></a>
+  <button class="btn d-sm-block bg-white d-md-none col-sm-12 collapsed py-3 text-left border-bottom" type="button" data-toggle="collapse" data-target="#reposCollapsible" aria-expanded="false" aria-controls="reposCollapsible">
+    <h2 class="d-inline">Active Repositories</h2> <div class="float-right mx-4"><i class="collapse_arrow"></i></div>
+  </button>
+
+  <div class="container collapse expand-sm" id="reposCollapsible">
+   <div class="row">
+     <div class="dropdown show d-md-none col-sm-12">
+      <a id="sortBtn1" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Most Stars
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#" onclick="sortActive()">Most Active</a>
+        <a class="dropdown-item" href="#" onclick="sortStars()">Most Stars</a>
+      </div>
+     </div>
+     <div class="d-none d-md-block col-md-12">
+       <!-- Sort Direction -->
+       <div class="dropdown show float-right">
+        <a id="sortBtn2" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Most Stars
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#" onclick="sortActive()">Most Active</a>
+          <a class="dropdown-item" href="#" onclick="sortStars()">Most Stars</a>
+        </div>
+      </div>
+      <h2>Active Repositories</h2>
+
+     </div>
+   </div>
+
+    <div class="row px-0" id="repos">
+      <!-- AJAX populated -->
+    </div>
+
+    <div class="col-sm-12 col-md-3 mx-auto text-center">
+      <button class="btn btn_primary load_repo_button" id="load_repo_button" onclick="loadMoreRepos()">Load More</button>
+    </div>
+  </div>
+
+  <a name="organizations" class="anchor"></a>
+  <button class="btn bg-white d-sm-block d-md-none col-sm-12 collapsed py-3 text-left border-bottom" type="button" data-toggle="collapse" data-target="#orgsCollapsible" aria-expanded="false" aria-controls="orgsCollapsible">
+    <h2 class="d-inline">Organizations</h2> <div class="float-right mx-4"><i class="collapse_arrow"></i></div>
+  </button>
+
+  <div class="collapse expand-sm" id="orgsCollapsible">
+    <div class="container">
+    <div class="row">
+      <div class="d-none d-md-block col-md-12 my-3">
+        <h2><strong>Organizations</strong></h2>
+      </div>
+    </div>
+    <div class="row px-0" id="orgs">
+      <!-- AJAX populated -->
+    </div>
+  </div>
+  </div>
+
+  <!-- Repository tile moustache template -->
+  <script id="repoTemplate" type="x-tmpl-mustache">
+    <div class="col-sm-12 col-md-6 col-lg-4 mx-0 px-0">
+      <div class="repo_card">
+        <div class="float-right meta">{u{ lang }u}</div>
+        <div class="repo_title"><strong>
+        <a href="{u{ url }u}">{u{ name }u}</a></strong></div>
+
+        <div class="repo_description">{u{ description }u}</div>
+        <div class="my-2"><span class="repo_org mx-auto">{u{ org }u}</span></div>
+        <div class="repo_stats">
+          <span class="meta">{% octicon repo-forked height:16 class:"align-middle" %} {u{ forks }u}</span>
+          <span class="meta">{% octicon star height:16 class:"align-middle" %} {u{ stars }u}</span>
+          <!-- Watchers moved to a separate API -->
+          <!--span class="meta">{% octicon eye height:16 class:"align-middle" %} {u{ watchers }u}</span-->
+          <!-- Alternative position of language -->
+          <!--<span class="meta">{% octicon code height:16 class:"align-middle" %} {u{ lang }u}</span>-->
+        </div>
+        <div class="repo_updated"><span class="meta"> {u{ updated }u} </span></div>
+      </div>
+    </div>
+  </script>
+
+  <!-- Organization tile moustache template -->
+  <script id="orgTemplate" type="x-tmpl-mustache">
+    <div class="col-sm-12 col-md-6 col-lg-4 px-0">
+      <div class="org_card">
+        <div class="repo_title"><strong><a href="{u{ url }u}">{u{ name }u}</a></strong><br></div>
+        <div class="repo_description">{u{ description }u}</div>
+      </div>
+    </div>
+  </script>
+
+  <script>
+      var repoTemplate = "{{page.mustacheDelimiter}}" + $('#repoTemplate').html();
+      var orgTemplate = "{{page.mustacheDelimiter}}" + $('#orgTemplate').html();
+      Mustache.parse(repoTemplate);
+      Mustache.parse(orgTemplate);
+
+    $(document).ready(function() {
+
+      var initPage = function() {
+        $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "MathWorks",
+          description: "A diverse selection of MathWorks Open Source projects and resources",
+          url: "https://www.github.com/mathworks"
+        }));
+        $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "Reference Architectures",
+          description: "Templates for running MATLAB and related products in the public cloud and interfaces with third party technologies.",
+          url: "https://www.github.com/mathworks-ref-arch"
+        }));
+        $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "SimBiology",
+          description: "SimBiology resources, including models and analysis tools, for Quantitative Systems Pharmacology (QSP), Physiologically-Based Pharmacokinetics (PBPK), and Pharmacokinetics/Pharmacodynamics (PK/PD).",
+          url: "https://github.com/mathworks-simbiology"
+        }));
+      }
+
+      if (isES6()) {
+        $.getScript('assets/javascripts/repo-helper.js', function() {
+          $.getScript('assets/javascripts/application.js', initPage);
+        })
+      } else {
+        $.getScript('assets/javascripts/application-ie.js', initPage);
+      }
+
+      // Set up outbound link tracking through Google Analytics
+      function onclickCallback(e) {
+        var e = window.e || e;
+        if ( (e.target.tagName !== 'A') || (e.target.host == window.location.host) ) return;
+        trackOutboundLink(e.target);
+      }
+      window.onload = function() {
+        if (document.addEventListener)
+          document.addEventListener('click', onclickCallback, false);
+        else
+          document.attachEvent('onclick', onclickCallback);
+      };
+    });
+
+    function loadMoreRepos() {
+      for(var i = gh.index; i < gh.repos.length && i < gh.index + gh.PAGE_SIZE; i++) {
+        $('#repos').append(Mustache.render(repoTemplate,
+          {
+            name: gh.repos[i].name,
+            url: gh.repos[i].url,
+            description: truncate(gh.repos[i].desc),
+            org: gh.repos[i].org_pretty,
+            stars: gh.repos[i].stars,
+            forks: gh.repos[i].forks,
+            watchers: gh.repos[i].watchers,
+            lang: gh.repos[i].lang,
+            updated: 'updated ' + timeago(gh.repos[i].updated_at)
+          }));
+      }
+
+      // Increment page for next lazy load
+      gh.index += gh.PAGE_SIZE;
+      if (gh.index > gh.repos.length)
+        $('#load_repo_button').hide();
+    }
+
+    function sortActive() {
+      $('#repos').html('');
+      $('#load_repo_button').show();
+      $('#sortBtn1').html('Most Active');
+      $('#sortBtn2').html('Most Active');
+      gh.index = 0;
+      gh.repos.sort(function(a,b) { return b.updated_at.getTime() - a.updated_at.getTime() });
+      loadMoreRepos();
+    }
+
+    function sortStars() {
+      $('#repos').html('');
+      $('#load_repo_button').show();
+      $('#sortBtn1').html('Most Stars');
+      $('#sortBtn2').html('Most Stars');
+      gh.index = 0;
+      gh.repos.sort(function(a,b) { return b.stars - a.stars });
+      loadMoreRepos();
+    }
+  </script>
+
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="d-xs-gone col-sm-2">&nbsp;</div> -->
+
+        <div class="col-sm-2 col-push-8 footer_section">
+          <div class="footer_subheading"><a href="https://www.mathworks.com/matlabcentral/?s_eid=PEP_20238">MATLAB Community</a></div>
+          <p><a href="https://www.mathworks.com/matlabcentral/fileexchange?s_eid=PEP_20236">File Exchange</a></p>
+          <p><a href="https://www.mathworks.com/matlabcentral/answers?s_eid=PEP_20237">MATLAB Answers</a></p>
+        </div>
+        <div class="col-sm-2 col-md-push-6 footer_section">
+          <div class="footer_subheading"><a href="https://www.mathworks.com/?s_eid=PEP_20232">MathWorks.com</a></div>
+          <p><a href="https://www.mathworks.com/products.html?s_eid=PEP_20239">Products</a></p>
+          <p><a href="https://www.mathworks.com/support.html?s_eid=PEP_20240">Support</a></p>
+          <p><a href="https://www.mathworks.com/company/jobs/opportunities/?s_eid=PEP_20241">Careers</a></p>
+        </div>
+        <div class="col-sm-2 col-sm-pull-10">
+          <div class="social_text">
+          <a href="http://www.facebook.com/MATLAB" class="svg_link" target="_blank">
+            <img class="ico" alt="Facebook" src="assets/images/ico-facebook.svg">
+          </a>
+          <a href="http://www.twitter.com/MATLAB" class="svg_link" target="_blank">
+            <img class="ico" alt="Twitter" src="assets/images/ico-twitter.svg">
+          </a>
+          <a href="https://plus.google.com/117177960465154322866?prsrc=3" class="svg_link" target="_blank">
+            <img class="ico" alt="Google+" src="assets/images/ico-google-plus.svg">
+          </a>
+          <a href="http://www.linkedin.com/company/the-mathworks_2" class="svg_link" target="_blank">
+            <img class="ico" alt="LinkedIn" src="assets/images/ico-linkedin.svg">
+          </a>
+          <a href="/company/rss.html" class="svg_link">
+            <img class="ico" alt="RSS" src="assets/images/ico-rss.svg">
+          </a>
+          <div class="text-center social_text">
+               <p class="pull_right_sm pull_right_md pull_right_lg"><small class="percent_90"><em>Join the conversation</em></small></p>
+          </div>
+          </div>
+        </div>
+        <div class="col-sm-6 order-sm-first footer_section">
+          <div class="footer_heading">
+            <a href="https://www.mathworks.com">MathWorks</a>
+          </div>
+          <i><p>Accelerating the pace of engineering and science</p></i>
+
+
+          <ul class="footernav">
+            <li class="footernav_footernav_patents">
+               <a href="https://www.mathworks.com/company/aboutus/policies_statements/patents.html?s_tid=gf_pat">Patents</a>
+            </li>
+
+            <li class="footernav_footernav_trademarks">
+              <a href="https://www.mathworks.com/company/aboutus/policies_statements/trademarks.html?s_tid=gf_trd">Trademarks</a>
+            </li>
+
+            <li class="footernav_footernav_privacy">
+              <a href="https://www.mathworks.com/company/aboutus/policies_statements.html?s_tid=gf_priv">Privacy Policy</a>
+            </li>
+
+            <li class="footernav_footernav_piracy">
+              <a href="https://www.mathworks.com/company/aboutus/policies_statements/piracy.html?s_tid=gf_pir">Preventing Piracy</a>
+            </li>
+          </ul>
+          <p>© 1994-2018 The MathWorks, Inc.</p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

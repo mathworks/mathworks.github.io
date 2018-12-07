@@ -1,0 +1,245 @@
+/* Workaround to keep footer fixed at bottom */
+#main_container {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 140px;
+}
+
+.navbar {
+  /*border-bottom: 4px solid rgba(0, 0, 0, 0.1)*/
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+}
+
+/* Offset anchors with sticky nav */
+a.anchor {
+    display: block;
+    position: relative;
+    top: -60px;
+    visibility: hidden;
+}
+
+.ico {
+  width: 15px;
+  height: 15px;
+  margin: 2px;
+}
+
+.social_text {
+  width: 110px;
+}
+
+.jumbotron {
+  background-image: url(../images/desktop-bg-compressed-rgb.png);
+  background-size: 1024px;
+  height: 280px;
+  border-radius: 0;
+}
+.nav-item {
+  padding-left: 32px;
+  font-size: 14px;
+  color: #333;
+}
+/*.nav-link {
+  padding: 0px !important;
+}*/
+.open_source_title {
+  color: #d78825;
+  font-size: 18px;
+}
+
+.org_stats_count {
+  font-family: Arial, sans-serif; font-size: 25px; color: #d78825;
+  display: block;
+}
+
+.org_stats {
+  text-align: center;
+  align: middle;
+  width: 30%;
+  margin-top: 35px;
+  text-transform: uppercase;
+}
+
+.contrib_card {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #D5D5D5;
+  padding: 15px;
+}
+
+#contributor-avatars {
+  display: flex;
+  justify-content: space-between;
+}
+
+.git_avatar {
+  height: 40px;
+  width: 40px;
+}
+
+.repo_card {
+  padding: 15px;
+  margin: 15px;
+  height: 14rem;
+  border: 1px solid lightgrey;
+  border-top: 4px solid #d78825;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.org_card {
+  margin: 15px;
+}
+
+.repo_title {
+  color: blue;
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+}
+
+.repo_stats {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.repo_updated {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.repo_org {
+  background-color: #EEDED3;
+  border: 1px solid #EECFBB;
+  padding: 3px;
+  border-radius: 2px;
+  color: #d78825;
+  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 12px;
+}
+
+.repo_description {
+  overflow: hidden;
+}
+
+#orgsCollapsible {
+  background-color: #F5F5F5;
+  margin-top: 15px;
+  padding-bottom: 105px;
+  padding-top: 40px;
+  margin-bottom: 0px;
+}
+
+.footer {
+  padding: 15px;
+  padding-top: 30px;
+  background-color: #515151;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a, .footer p {
+  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 12px; color: #A0A0A0;
+  margin-bottom:5px;
+}
+.footer_heading a {
+  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 16px; color: white;
+}
+.footer_subheading a {
+  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 14px; color: white;
+
+}
+.footer_subheading {
+  margin-bottom:5px;
+}
+
+
+ul{list-style: none; padding-lefT: 0px}
+h1 { font-family: "Trebuchet MS", Arial, sans-serif; font-size: 26px; color: #333; }
+h2 { font-family: "Trebuchet MS", Arial, sans-serif; font-size: 22px; color: #333; }
+h3 { font-family: Arial, sans-serif; font-size: 16px; color: #333; }
+p { font-family: Arial, sans-serif; font-size: 14px; color: #474747; }
+a { font-family: Arial, sans-serif; color: #0076A8; }
+.meta { font-family: Arial, sans-serif; font-size: 13px; color: #6F6F6F; vertical-align: bottom; margin-left: 5px}
+.btn_primary { background-color: #0076A8; color: white; margin:15px;}
+
+/* Show collapsed divs in dektop */
+@media (min-width: 768px) {
+  .collapse.expand-sm {
+    display: block;
+    height: auto !important;
+    visibility: visible;
+  }
+  /* From Site6 footer */
+  .footernav{margin-bottom:5px;overflow:hidden}
+  .footernav li{padding-left:0;margin-bottom:0;float:left}
+  .footernav li+li{border-left:1px solid gray}
+  .footernav a{padding:0 8px;display:block}
+  .footernav li:first-child a{padding-left:0}
+  .footernav li:last-child a{padding-right:0}
+}
+
+/* Responsive expand/collapse arrow */
+.collapse_arrow {
+  display: inline-block;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-top: 2px solid #aaa;
+  border-left: 2px solid #aaa;
+  transition: all 150ms ease-in-out;
+  transform: rotate(135deg);
+}
+
+[data-toggle="collapse"] .collapse-arrow {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  transform: rotate(225);
+}
+
+[data-toggle="collapse"].collapsed .collapse-arrow {
+  -webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contrib_card {
+    margin-top: 35px;
+    width: 100%;
+  }
+  .jumbotron {
+      height: 400px !important;
+      background-size: 2048px;
+  }
+  #main_container {
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 500px;
+  }
+  .load_repo_button {
+    width: 100%;
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+  .footer-section {
+    margin-bottom: 25px;
+  }
+  .social_text {
+    width: 200px;
+  }
+  .ico {
+    height: 32px;
+    width: 32px;
+  }
+  .org_stats .meta{
+    font-size: 10px !important;
+  }
+}
