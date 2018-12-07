@@ -2,11 +2,43 @@
 <html>
 
 <head>
-  <meta http-equiv="refresh" content="0;URL='https://github.com/mathworks/'" />
+  <meta http-equiv="refresh" content="10;URL='https://github.com/mathworks/'" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130565811-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-130565811-1');
+    /**
+    * Function that tracks a click on an outbound link in Analytics.
+    * This function takes a valid URL string as an argument, and uses that URL string
+    * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+    * using 'navigator.sendBeacon' in browser that support it.
+    */
+    var trackOutboundLink = function(url) {
+       ga('send', 'event', 'outbound', 'click', url, {
+         'transport': 'beacon',
+         'hitCallback': function(){document.location = url;}
+       });
+    }
+  </script>
 </head>
 
 <body>
-  &nbsp;
+  You are being <a href="https://github.com/mathworks">redirected.
+  <script>
+    function onclickCallback(e) { // @refer https://stackoverflow.com/a/8496919/8255629
+      var e = window.e || e;
+      if ( (e.target.tagName !== 'A') || (e.target.host == window.location.host) ) return;
+      trackOutboundLink(e.target); // GA event tracker
+    }
+    if (document.addEventListener)
+      document.addEventListener('click', onclickCallback, false);
+    else
+      document.attachEvent('onclick', onclickCallback);
+  </script>
 </body>
 
 </html>
