@@ -54,7 +54,7 @@ var gh = {PAGE_SIZE: 6, repos: [], page: 0, index: 0};
      for (var i = 0; i < gh.repos.length; i++)
        gh.repos[i].updated_at = new Date(gh.repos[i].updated_at);
 
-     // sort by stars
-     gh.repos.sort(function(a,b) { return b.stars - a.stars });
+     // sort by active
+     gh.repos.sort(function(a,b) { return b.updated_at.getTime() - a.updated_at.getTime() });
      loadMoreRepos();
    });

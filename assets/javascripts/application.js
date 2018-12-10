@@ -58,14 +58,14 @@ var gh = new MW_GitHub();
           console.log("Error or API limit reached; Used GitHub cache");
 
           gh.repos = cache.repos;
-          // Sort by stars
-          gh.repos.sort(function(a,b) { return b.stars - a.stars });
+          // Sort by active
+          gh.repos.sort(function(a,b) { return b.updated_at.getTime() - a.updated_at.getTime() });
 
           loadMoreRepos();
         });
       } else {
-        // Sort by stars
-        gh.repos.sort(function(a,b) { return b.stars - a.stars });
+        // Sort by active
+        gh.repos.sort(function(a,b) { return b.updated_at.getTime() - a.updated_at.getTime() });
 
         loadMoreRepos();
       }
