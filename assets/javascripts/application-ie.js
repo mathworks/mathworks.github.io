@@ -37,7 +37,7 @@ function timeago(date) {
 var gh = {PAGE_SIZE: 6, repos: [], page: 0, index: 0};
 
 
-   $.getJSON( "assets/javascripts/stats.json", function( data ) {
+   $.getJSON( "assets/javascripts/stats.json?d=" + Date.now(), function( data ) {
      gh.stats = data;
      // Update stats
      $('#stats-org-count').html(gh.stats.org_total);
@@ -49,7 +49,7 @@ var gh = {PAGE_SIZE: 6, repos: [], page: 0, index: 0};
         $("#contributor-avatars").append("<a href='" + ctrb.url + "' onclick=\"trackOutboundLink('" + ctrb.url + "'); return false;\"><img src='" + ctrb.avatar + "' class='git_avatar'></a>");
      });
    });
-   $.getJSON( "assets/javascripts/cache.json", function( data ) {
+   $.getJSON( "assets/javascripts/cache.json?d=" + Date.now(), function( data ) {
      gh.repos = data.repos;
      for (var i = 0; i < gh.repos.length; i++)
        gh.repos[i].updated_at = new Date(gh.repos[i].updated_at);

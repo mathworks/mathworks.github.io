@@ -162,7 +162,7 @@
   // Promise to return key metrics for hero banner
   MW_GitHub.prototype.getStats = function(headers = new Headers()) {
     return new Promise(function(resolve, reject) {
-      fetch('./assets/javascripts/stats.json', {headers: headers}).then(response => response.json()).then(stats => {
+      fetch('./assets/javascripts/stats.json?d=' + Date.now(), {headers: headers}).then(response => response.json()).then(stats => {
         resolve(stats);
       }).catch(err => {
         reject(err);
@@ -172,7 +172,7 @@
 
   MW_GitHub.prototype.getRepositoriesCache = function(headers = new Headers()) {
     return new Promise(function(resolve, reject) {
-      fetch('.//assets/javascripts/cache.json', {headers: headers}).then(response => response.json()).then(cache => {
+      fetch('./assets/javascripts/cache.json?d=' + Date.now(), {headers: headers}).then(response => response.json()).then(cache => {
         for (var index in cache.repos) {
           cache.repos[index].updated_at = new Date(cache.repos[index].updated_at);
         }
