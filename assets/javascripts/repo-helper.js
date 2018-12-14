@@ -59,7 +59,7 @@
     }
 
     var request = fetchRepos(Object.keys(orgs).map(function(org, name) {
-      return 'https://api.github.com/orgs/' + org + '/repos?per_page=100';
+      return 'https://api.github.com/orgs/' + org + '/repos?per_page=100&visibility=public';
     }));
     var repos = [];
 
