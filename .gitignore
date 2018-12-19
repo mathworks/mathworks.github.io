@@ -3,3 +3,6 @@ _site
 .jekyll-metadata
 node_modules
 package-lock.json
+.DS_Store
+.DS_Store?
+._*
