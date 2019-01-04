@@ -36,7 +36,7 @@ gh.getContributors(function(contributors) {
     top_contributors: gh.top_contributors,
     ctrb_total: gh.contributors.length,
     org_total: Object.keys(gh.orgs).length,
-    repo_total: gh.repos.length
+    repo_total: gh.repos.length + 1
   };
   var jsonFull = {
     repos: gh.repos,
