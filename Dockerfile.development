@@ -1,6 +1,1 @@
 FROM ruby:latest
-# FROM mw-docker.repositories.mathworks.com/com.mathworks.ruby.ruby:1.0.0
-
-# This Dockerfile exists to work around gaps in how Docker and Docker Compose
-# handle permissions when NFS directories are mounted as volumes.
-
