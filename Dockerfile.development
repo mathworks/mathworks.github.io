@@ -1,16 +1,6 @@
-FROM mw-docker.repositories.mathworks.com/com.mathworks.ruby.ruby:1.0.0
+FROM ruby:latest
+# FROM mw-docker.repositories.mathworks.com/com.mathworks.ruby.ruby:1.0.0
 
 # This Dockerfile exists to work around gaps in how Docker and Docker Compose
 # handle permissions when NFS directories are mounted as volumes.
 
-ARG DEV_ENV_USER_ID
-
-WORKDIR /home/ruby/app
-USER root
-
-RUN usermod --uid=$DEV_ENV_USER_ID ruby
-
-RUN chown -R ruby:ruby /opt/ruby && \
-    chown -R ruby:ruby /opt/node
-
-USER ruby
