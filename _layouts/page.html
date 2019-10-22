@@ -235,6 +235,11 @@
           description: "SimBiology resources, including models and analysis tools, for Quantitative Systems Pharmacology (QSP), Physiologically-Based Pharmacokinetics (PBPK), and Pharmacokinetics/Pharmacodynamics (PK/PD).",
           url: "https://github.com/mathworks-simbiology"
         }));
+        $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "Deep Learning",
+          description: "Deep learning resources, including pretrained neural network models.",
+          url: "https://github.com/matlab-deep-learning"
+        }));
       }
 
       if (isES6()) {
