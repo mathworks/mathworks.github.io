@@ -10,7 +10,8 @@
                   'mathworks': 'MathWorks',
                   'mathworks-ref-arch': 'Reference Architecture',
                   'mathworks-SimBiology': 'SimBiology',
-                  'matlab-deep-learning' : 'Deep Learning'
+                  'matlab-deep-learning' : 'Deep Learning',
+                  'mathworks-robotics' : 'Robotics'
                   // Future orgs
                   //'thingspeak': 'ThingSpeak'
                 };
