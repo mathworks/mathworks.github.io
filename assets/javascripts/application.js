@@ -4,7 +4,7 @@ function truncate(text, length) {
     return '';
 
   if (text.length > length)
-    return text.substring(0,text.indexOf(" ", 70)) + '...';
+    return text.substring(0,length) + '...';
   else
     return text;
 }
