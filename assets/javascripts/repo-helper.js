@@ -9,7 +9,7 @@
     this.orgs = {
                   'mathworks': 'MathWorks',
                   'mathworks-ref-arch': 'Reference Architecture',
-                  'mathworks-SimBiology': 'SimBiology',
+                  'MathWorks-SimBiology': 'SimBiology',
                   'matlab-deep-learning' : 'Deep Learning',
                   'mathworks-robotics' : 'Robotics'
                   // Future orgs
