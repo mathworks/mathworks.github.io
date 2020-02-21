@@ -33,9 +33,7 @@
     async function fetchRepos(urls) {
       try {
         return await Promise.all(urls.map(url => {
-          //fetch(url, {headers: headers}).then(response => {
           return limiter.schedule(fetch, url, {headers: headers}).then(response => {
-
             // Perform a recursion down all pages only if requested (costly)
             if (response.headers.get('link') && followPages == true) {
               linkFields = response.headers.get('link').split(',');
