@@ -1,4 +1,9 @@
 (function() {
+  // Maximum 1 concurrent connection, 3 per second
+  const limiter = new Bottleneck({
+    maxConcurrent: 1,
+    minTime: 333
+  });
 
   // Constructor
   MW_GitHub = function() {
@@ -27,33 +32,36 @@
     // We want to pull each org, then process all of the results
     async function fetchRepos(urls) {
       try {
-        return await Promise.all(urls.map(url => fetch(url, {headers: headers}).then(response => {
+        return await Promise.all(urls.map(url => {
+          //fetch(url, {headers: headers}).then(response => {
+          return limiter.schedule(fetch, url, {headers: headers}).then(response => {
 
-          // Perform a recursion down all pages only if requested (costly)
-          if (response.headers.get('link') && followPages == true) {
-            linkFields = response.headers.get('link').split(',');
-            var links = {};
-            linkFields.forEach(function(linkField) {
-              links[linkField.match(/rel="(\w*)"/)[1]] = linkField.match(/\<(.*)\>/)[1];
-            });
-            if (links.hasOwnProperty('next') && links.hasOwnProperty('last'))
-              return new Promise(function(resolve, reject) {
-                response.json().then(async prevJSON => {
-                  fetchRepos([links['next']]).then(json => {
-                    try {
-                      var resultJSON = prevJSON.concat(json[0]);
-                      resolve (resultJSON);
-                    } catch (err) {
-                      reject (err);
-                    }
+            // Perform a recursion down all pages only if requested (costly)
+            if (response.headers.get('link') && followPages == true) {
+              linkFields = response.headers.get('link').split(',');
+              var links = {};
+              linkFields.forEach(function(linkField) {
+                links[linkField.match(/rel="(\w*)"/)[1]] = linkField.match(/\<(.*)\>/)[1];
+              });
+              if (links.hasOwnProperty('next') && links.hasOwnProperty('last'))
+                return new Promise(function(resolve, reject) {
+                  response.json().then(async prevJSON => {
+                    fetchRepos([links['next']]).then(json => {
+                      try {
+                        var resultJSON = prevJSON.concat(json[0]);
+                        resolve (resultJSON);
+                      } catch (err) {
+                        reject (err);
+                      }
+                    });
                   });
                 });
-              });
-            else
+              else
+                return response.json()
+            } else
               return response.json()
-          } else
-            return response.json()
-        }).catch(error => console.log(error))));
+          }).catch(error => console.log(error))
+        }));
       } catch (err) {
         throw (err);
       }
@@ -102,36 +110,38 @@
     var ignore = this.ignore_list;
     async function fetchCtrb(urls) {
       try {
-        return await Promise.all(urls.map(url => fetch(url, {headers: headers}).then(response => {
-          // Perform a recursion down all pages
-          if (response.headers.get('link')) {
-            linkFields = response.headers.get('link').split(',');
-            var links = {};
-            linkFields.forEach(function(linkField) {
-              links[linkField.match(/rel="(\w*)"/)[1]] = linkField.match(/\<(.*)\>/)[1];
-            });
-            if (links.hasOwnProperty('next') && links.hasOwnProperty('last'))
-              return new Promise(function(resolve, reject) {
-                response.json().then(async prevJSON => {
-                  fetchCtrb([links['next']]).then(json => {
-                    try {
-                      var resultJSON = prevJSON.concat(json[0]);
-                      resolve (resultJSON);
-                    } catch (err) {
-                      reject (err);
-                    }
+        return await Promise.all(urls.map(url => {
+          return limiter.schedule(fetch, url, {headers: headers}).then(response => {
+            // Perform a recursion down all pages
+            if (response.headers.get('link')) {
+              linkFields = response.headers.get('link').split(',');
+              var links = {};
+              linkFields.forEach(function(linkField) {
+                links[linkField.match(/rel="(\w*)"/)[1]] = linkField.match(/\<(.*)\>/)[1];
+              });
+              if (links.hasOwnProperty('next') && links.hasOwnProperty('last'))
+                return new Promise(function(resolve, reject) {
+                  response.json().then(async prevJSON => {
+                    fetchCtrb([links['next']]).then(json => {
+                      try {
+                        var resultJSON = prevJSON.concat(json[0]);
+                        resolve (resultJSON);
+                      } catch (err) {
+                        reject (err);
+                      }
+                    });
                   });
                 });
-              });
-            else
+              else
+                return response.json()
+            } else
               return response.json()
-          } else
-            return response.json()
-        }).catch(error => console.log(error))));
+          }).catch(error => console.log(error))
+        }));
       } catch (err) {
         throw (err);
-      }
     }
+  }
 
     // Get repositories, following pagination
     this.getRepositories(function(repos) {

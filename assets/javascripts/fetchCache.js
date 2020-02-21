@@ -10,6 +10,7 @@ truncate = function(text, length = 80) {
 }
 
 fetch = require('node-fetch');
+Bottleneck = require("bottleneck/es5");
 
 require('./repo-helper.js');
 
