@@ -1,10 +1,4 @@
 (function() {
-  // Maximum 1 concurrent connection, 3 per second
-  const limiter = new Bottleneck({
-    maxConcurrent: 1,
-    minTime: 333
-  });
-
   // Constructor
   MW_GitHub = function() {
     this.PAGE_SIZE = 6;
@@ -32,8 +26,9 @@
     // We want to pull each org, then process all of the results
     async function fetchRepos(urls) {
       try {
-        return await Promise.all(urls.map(url => {
-          return limiter.schedule(fetch, url, {headers: headers}).then(response => {
+        return await Promise.all(urls.map(url =>
+          fetch(url, {headers: headers}).then(response => {
+          //return limiter.schedule(fetch, url, {headers: headers}).then(response => {
             // Perform a recursion down all pages only if requested (costly)
             if (response.headers.get('link') && followPages == true) {
               linkFields = response.headers.get('link').split(',');
@@ -59,7 +54,7 @@
             } else
               return response.json()
           }).catch(error => console.log(error))
-        }));
+        ));
       } catch (err) {
         throw (err);
       }
@@ -104,6 +99,12 @@
   // Populate contributors from across all orgs, repos
   // WARNING: This is a very costly method! Run locally and hardcode the result above.
   MW_GitHub.prototype.getContributors = function(callback, headers = new Headers()) {
+    // Maximum 1 concurrent connection, 3 per second
+    const limiter = new Bottleneck({
+      maxConcurrent: 1,
+      minTime: 333
+    });
+    
     var contributors = {};
     var ignore = this.ignore_list;
     async function fetchCtrb(urls) {
