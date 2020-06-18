@@ -10,9 +10,8 @@
                   'mathworks-ref-arch': 'Reference Architecture',
                   'MathWorks-SimBiology': 'SimBiology',
                   'matlab-deep-learning' : 'Deep Learning',
-                  'mathworks-robotics' : 'Robotics'
-                  // Future orgs
-                  //'thingspeak': 'ThingSpeak'
+                  'mathworks-robotics' : 'Robotics',
+                  'thingspeak': 'ThingSpeak'
                 };
     this.ignore_list = [ 'xilinx-linux', 'buildroot', 'xilinx-uboot', 'altera-linux', 'altera-uboot' ];
     this.contributors = {};
