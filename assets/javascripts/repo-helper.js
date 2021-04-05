@@ -68,7 +68,7 @@
       json.forEach(function(org) {
         if (Array.isArray(org)) {
           org.forEach(function(r) {
-            var _org = r.full_name.split('/')[0];
+            var _org = r.full_name ? r.full_name.split('/')[0] : r.name;
             if (r.name != 'mathworks.github.io')
               repos.push({
                 is_fork: r.fork,

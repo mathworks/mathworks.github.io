@@ -1,3 +1,19 @@
+/* fetchCache.js
+   Prepopulate all caches and update the top-level stats
+   This script must be executed periodically with a privileged API Token
+   to make the necessary number of API requests to populate caches.
+   
+   Example: 
+   GITHUB_TOKEN=myAwesomeToken node fetchCache.js
+
+   Information on generating a token:
+   https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
+
+   This script should be invoked ideally from a cronned GitHub Action
+*/   
+
+
+
 // Helper methods for repo-helper.js
 truncate = function(text, length = 80) {
   if (!text)
@@ -16,13 +32,11 @@ require('./repo-helper.js');
 
 var fs = require('fs');
 
-// Use basic auth in Node for pulling cached metrics with a higher rate limit
-const GH_USER = process.env.GITHUB_USER || '';
-const GH_PASS = process.env.GITHUB_PASS || '';
-console.log("Using credentials " + GH_USER + ":" + GH_PASS);
+const GH_TOKEN = process.env.GITHUB_TOKEN || '';
+console.log("Using token " + GH_TOKEN);
 
 var headers = new fetch.Headers();
-headers.set('Authorization', 'Basic ' + Buffer.from(GH_USER + ":" + GH_PASS).toString('base64'));
+headers.set('Authorization', 'Token ' + GH_TOKEN);
 var gh = new MW_GitHub();
 
 gh.getContributors(function(contributors) {
