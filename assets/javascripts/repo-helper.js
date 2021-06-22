@@ -12,7 +12,7 @@
                   'matlab-deep-learning' : 'Deep Learning',
                   'mathworks-robotics' : 'Robotics',
                   'thingspeak': 'ThingSpeak',
-		  'mathWorks-teaching-resources': 'Teaching Resources'
+		  'MathWorks-Teaching-Resources': 'Teaching Resources'
                 };
     this.ignore_list = [ 'xilinx-linux', 'buildroot', 'xilinx-uboot', 'altera-linux', 'altera-uboot' ];
     this.contributors = {};
