@@ -11,7 +11,8 @@
                   'MathWorks-SimBiology': 'SimBiology',
                   'matlab-deep-learning' : 'Deep Learning',
                   'mathworks-robotics' : 'Robotics',
-                  'thingspeak': 'ThingSpeak'
+                  'thingspeak': 'ThingSpeak',
+		  'mathWorks-teaching-resources': 'Teaching Resources'
                 };
     this.ignore_list = [ 'xilinx-linux', 'buildroot', 'xilinx-uboot', 'altera-linux', 'altera-uboot' ];
     this.contributors = {};
