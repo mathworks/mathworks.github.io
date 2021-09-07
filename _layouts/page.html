@@ -237,9 +237,9 @@
           url: "https://github.com/MathWorks-Teaching-Resources"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
-          name: "SimBiology",
-          description: "SimBiology resources, including models and analysis tools, for Quantitative Systems Pharmacology (QSP), Physiologically-Based Pharmacokinetics (PBPK), and Pharmacokinetics/Pharmacodynamics (PK/PD).",
-          url: "https://github.com/mathworks-simbiology"
+          name: "Graphics and App Building",
+          description: "A collection of charts, UI components, and utilities to supplement your data visualization and app building needs.",
+          url: "https://github.com/MATLAB-Graphics-and-App-Building"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
           name: "Deep Learning",
@@ -252,10 +252,16 @@
           url: "https://github.com/mathworks-robotics"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "SimBiology",
+          description: "SimBiology resources, including models and analysis tools, for Quantitative Systems Pharmacology (QSP), Physiologically-Based Pharmacokinetics (PBPK), and Pharmacokinetics/Pharmacodynamics (PK/PD).",
+          url: "https://github.com/mathworks-simbiology"
+        }));
+        $('#orgs').append(Mustache.render(orgTemplate, {
           name: "ThingSpeak",
           description: "IoT projects, hardware libraries, examples, and MATLAB apps for ThingSpeak.",
           url: "https://github.com/thingspeak"
         }));
+
       }
 
       if (isES6()) {
