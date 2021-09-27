@@ -8,7 +8,7 @@
     this.orgs = {
                   'mathworks': 'MathWorks',
                   'mathworks-ref-arch': 'Reference Architecture',
-                  'MathWorks-SimBiology': 'SimBiology',
+                  'mathWorks-simbiology': 'SimBiology',
                   'matlab-deep-learning' : 'Deep Learning',
                   'mathworks-robotics' : 'Robotics',
                   'thingspeak': 'ThingSpeak',
