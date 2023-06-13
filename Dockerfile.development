@@ -1,1 +1,5 @@
-FROM ruby:latest
+FROM alpine:latest
+WORKDIR /www
+RUN apk --no-cache -U add python3 && \
+    apk upgrade --no-cache -U -a  
+ENTRYPOINT [ "python3", "-m", "http.server", "8080" ]

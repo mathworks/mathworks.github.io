@@ -1,0 +1,9 @@
+services:
+  githubio:
+    tty: true
+    stdin_open: true
+    build:
+      context: '.'
+      dockerfile: Dockerfile.development
+    volumes:
+      - .:/www

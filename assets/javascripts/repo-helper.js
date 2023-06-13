@@ -12,8 +12,8 @@
                   'matlab-deep-learning' : 'Deep Learning',
                   'mathworks-robotics' : 'Robotics',
                   'thingspeak': 'ThingSpeak',
-		  'MathWorks-Teaching-Resources': 'Teaching Resources',
-		  'MATLAB-Graphics-and-App-Building': 'Graphics and App Building'
+		              'MathWorks-Teaching-Resources': 'Teaching Resources',
+		              'MATLAB-Graphics-and-App-Building': 'Graphics and App Building'
                 };
     this.ignore_list = [ 'xilinx-linux', 'buildroot', 'xilinx-uboot', 'altera-linux', 'altera-uboot' ];
     this.contributors = {};
