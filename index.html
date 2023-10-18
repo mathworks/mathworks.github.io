@@ -263,15 +263,11 @@
         }));
 
       }
-
-      if (isES6()) {
-        $.getScript('assets/javascripts/repo-helper.js', function() {
-          $.getScript('assets/javascripts/application.js', initPage);
-        })
-      } else {
-        $.getScript('assets/javascripts/application-ie.js', initPage);
-      }
-
+      
+      $.getScript('assets/javascripts/repo-helper.js', function() {
+        $.getScript('assets/javascripts/application.js', initPage);
+      })
+    
       // Set up outbound link tracking through Google Analytics
       function onclickCallback(e) {
         var e = window.e || e;

@@ -35,38 +35,35 @@ function timeago(date) {
 }
 
 var gh = new MW_GitHub();
+gh.getStats().then(stats => {
 
+  // Update stats
+  $('#stats-org-count').html(stats.org_total);
+  $('#stats-repo-count').html(stats.repo_total);
+  $('#stats-ctrb-count').html(stats.ctrb_total);
 
-    // TODO: IE will still choke trying to parse the syntax, even if not executed
-    gh.getStats().then(stats => {
+  // Update top contributors
+  stats.top_contributors.forEach(function(ctrb) {
+    $("#contributor-avatars").append("<a href='" + ctrb.url + "' onclick=\"trackOutboundLink('" + ctrb.url + "'); return false;\"><img src='" + ctrb.avatar + "' class='git_avatar'></a>");
+  });
+  gh.stats = stats;
+});
 
-      // Update stats
-      $('#stats-org-count').html(stats.org_total);
-      $('#stats-repo-count').html(stats.repo_total);
-      $('#stats-ctrb-count').html(stats.ctrb_total);
+gh.getRepositories(function() {
+  if (gh.repos.length == 0) {
+    gh.getRepositoriesCache().then(cache => {
+      console.log("Error or API limit reached; Used GitHub cache");
 
-      // Update top contributors
-      stats.top_contributors.forEach(function(ctrb) {
-        $("#contributor-avatars").append("<a href='" + ctrb.url + "' onclick=\"trackOutboundLink('" + ctrb.url + "'); return false;\"><img src='" + ctrb.avatar + "' class='git_avatar'></a>");
-      });
-      gh.stats = stats;
+      gh.repos = cache.repos;
+      // Sort by active
+      gh.repos.sort(function(a,b) { return b.updated_at.getTime() - a.updated_at.getTime() });
+
+      loadMoreRepos();
     });
+  } else {
+    // Sort by active
+    gh.repos.sort(function(a,b) { return b.updated_at.getTime() - a.updated_at.getTime() });
 
-    gh.getRepositories(function() {
-      if (gh.repos.length == 0) {
-        gh.getRepositoriesCache().then(cache => {
-          console.log("Error or API limit reached; Used GitHub cache");
-
-          gh.repos = cache.repos;
-          // Sort by active
-          gh.repos.sort(function(a,b) { return b.updated_at.getTime() - a.updated_at.getTime() });
-
-          loadMoreRepos();
-        });
-      } else {
-        // Sort by active
-        gh.repos.sort(function(a,b) { return b.updated_at.getTime() - a.updated_at.getTime() });
-
-        loadMoreRepos();
-      }
-    });
+    loadMoreRepos();
+  }
+});
