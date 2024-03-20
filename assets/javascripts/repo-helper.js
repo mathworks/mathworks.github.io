@@ -13,7 +13,8 @@
                   'mathworks-robotics' : 'Robotics',
                   'thingspeak': 'ThingSpeak',
 		              'MathWorks-Teaching-Resources': 'Teaching Resources',
-		              'MATLAB-Graphics-and-App-Building': 'Graphics and App Building'
+		              'MATLAB-Graphics-and-App-Building': 'Graphics and App Building',
+		              'simscape': 'Simscape'	    
                 };
     this.ignore_list = [ 'xilinx-linux', 'buildroot', 'xilinx-uboot', 'altera-linux', 'altera-uboot' ];
     this.contributors = {};
