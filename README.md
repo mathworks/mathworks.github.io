@@ -52,16 +52,19 @@ The page uses a cache for certain costly API requests, such as finding the most 
 To regenerate this cache periodically, perform the following:
 
 - Generate an API token: [GitHub Tokens](https://github.com/settings/tokens)
+  - You'll need the following permissions: public_repo, read:project, read:user, user:email
 - Run `fetchCache.js` as follows:
 
 ```
 cd assets/javascripts
+npm install
 GITHUB_TOKEN=(PASTE YOUR TOKEN HERE) node ./fetchCache.js
 ```
 
 e.g. for token `ghp_1234567abcdefg`
 ```
 cd assets/javascripts
+npm install
 GITHUB_TOKEN=ghp_1234567abcdefg node ./fetchCache.js
 ```
 
