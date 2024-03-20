@@ -261,7 +261,12 @@
           description: "IoT projects, hardware libraries, examples, and MATLAB apps for ThingSpeak.",
           url: "https://github.com/thingspeak"
         }));
-
+        $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "Simscape",
+          description: "Design physical systems using simulation with Simscape.",
+          url: "https://github.com/simscape"
+        }));
+        
       }
       
       $.getScript('assets/javascripts/repo-helper.js', function() {
