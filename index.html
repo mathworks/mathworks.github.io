@@ -9,7 +9,7 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="897">
 <meta property="og:image:height" content="806">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="stylesheet" href="assets/stylesheets/application.css">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-06EF8BRFW9"></script>
@@ -21,11 +21,10 @@
 </script>
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js" integrity="sha256-1B6REXjRTNQ4IJEUSVYbAqEDRIYP8uKNUo+QgYZUzJM=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bottleneck/2.12.2/bottleneck.min.js" integrity="sha256-D9mMquoWxTmJwrfiqiDmRdnbylAcfioqIGGtPzIiA9k=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bottleneck@2.19.5/light.min.js"></script>
 <script>
   var trackOutboundLink = function(url) {
     gtag('event', 'click', {
@@ -48,7 +47,7 @@
 </script>
 <nav class="navbar sticky-top bg-white navbar-expand-lg navbar-light ">
   <div class="container px-0 mx-auto">
-  <a class="navbar-brand" href="#" onclick="$(window).scrollTop(0);"><img src="assets/images/pic-header-mathworks-logo.svg" height="28px"> <span class="open_source_title"></span></a>
+  <a class="navbar-brand" href="#" onclick="$(window).scrollTop(0);"><img src="assets/images/pic-header-mathworks-logo.svg" height="28px" alt="MathWorks Open Source Projects"> <span class="open_source_title"></span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -266,6 +265,11 @@
           description: "Design physical systems using simulation with Simscape.",
           url: "https://github.com/simscape"
         }));
+        $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "MATLAB Development & AI Coding Projects",
+          description: "Development tools for MATLAB developers, including AI Prompts, skills, rules, commands, and MCP tools for agentic workflows.",
+          url: "https://github.com/simscape"
+        }));
         
       }
       
@@ -335,18 +339,18 @@
       <div class="row">
         <!-- <div class="d-xs-gone col-sm-2">&nbsp;</div> -->
 
-        <div class="col-sm-2 col-push-8 footer_section">
+        <div class="col-sm-2 col-push-8 footer_section d-none d-sm-block">
           <div class="footer_subheading"><a href="https://www.mathworks.com/matlabcentral/?s_eid=PEP_20238">MATLAB Community</a></div>
           <p><a href="https://www.mathworks.com/matlabcentral/fileexchange?s_eid=PEP_20236">File Exchange</a></p>
           <p><a href="https://www.mathworks.com/matlabcentral/answers?s_eid=PEP_20237">MATLAB Answers</a></p>
         </div>
-        <div class="col-sm-2 col-md-push-6 footer_section">
+        <div class="col-sm-2 col-md-push-6 footer_section d-none d-sm-block">
           <div class="footer_subheading"><a href="https://www.mathworks.com/?s_eid=PEP_20232">MathWorks.com</a></div>
           <p><a href="https://www.mathworks.com/products.html?s_eid=PEP_20239">Products</a></p>
           <p><a href="https://www.mathworks.com/support.html?s_eid=PEP_20240">Support</a></p>
           <p><a href="https://www.mathworks.com/company/jobs/opportunities/?s_eid=PEP_20241">Careers</a></p>
         </div>
-        <div class="col-sm-2 col-sm-pull-10">
+        <div class="col-sm-4 col-sm-pull-8">
           <div class="social_text">
           <a href="http://www.facebook.com/MATLAB" class="svg_link" target="_blank">
             <img class="ico" alt="Facebook" src="assets/images/ico-facebook.svg">
@@ -357,15 +361,18 @@
           <a href="http://www.linkedin.com/company/the-mathworks_2" class="svg_link" target="_blank">
             <img class="ico" alt="LinkedIn" src="assets/images/ico-linkedin.svg">
           </a>
-          <a href="https://www.mathworks.com/company/rss.html" class="svg_link">
-            <img class="ico" alt="RSS" src="assets/images/ico-rss.svg">
+          <a href="https://www.instagram.com/matlab/" class="svg_link" target="_blank">
+            <img class="ico" alt="Instagram" src="assets/images/ico-instagram.svg">
           </a>
-          <div class="text-center social_text">
-               <p class="pull_right_sm pull_right_md pull_right_lg"><small class="percent_90"><em>Join the conversation</em></small></p>
-          </div>
+          <a href="https://www.youtube.com/user/MATLAB" class="svg_link" target="_blank">
+            <img class="ico" alt="MATLAB videos on YouTube" src="assets/images/ico-youtube.svg">
+          </a>
+          <a href="https://www.mathworks.com/company/rss.html" class="svg_link" target="_blank">
+            <img class="ico" alt="MathWorks RSS Feed" src="assets/images/ico-rss.svg">
+          </a>
           </div>
         </div>
-        <div class="col-sm-6 order-sm-first footer_section">
+        <div class="col-sm-4 order-sm-first footer_section">
           <div class="footer_heading">
             <a href="https://www.mathworks.com">MathWorks</a>
           </div>
@@ -381,7 +388,7 @@
               <a href="https://www.mathworks.com/company/aboutus/policies_statements.html?s_tid=gf_priv">Privacy Policy</a>
             </li>
           </ul>
-          <p>© 1994-2023 The MathWorks, Inc.</p>
+          <p>© 1994-2025 The MathWorks, Inc.</p>
 
 
       </div>

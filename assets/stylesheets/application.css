@@ -33,7 +33,9 @@ a:hover{
 }
 
 .social_text {
-  width: 110px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .jumbotron {
@@ -140,21 +142,21 @@ a:hover{
 .footer {
   padding: 15px;
   padding-top: 30px;
-  background-color: #515151;
+  background-color: #e0e0e0;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
 .footer a, .footer p {
-  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 12px; color: #A0A0A0;
+  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 12px; color: #424242;
   margin-bottom:5px;
 }
 .footer_heading a {
-  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 16px; color: white;
+  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 16px; color: #333333; font-weight: bold;
 }
 .footer_subheading a {
-  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 14px; color: white;
+  font-family: "Trebuchet MS", Arial, sans-serif; font-size: 14px; color: #333333; font-weight: bold;
 
 }
 .footer_subheading {
@@ -237,7 +239,7 @@ a { font-family: Arial, sans-serif; color: #0076A8; }
     margin-bottom: 25px;
   }
   .social_text {
-    width: 200px;
+    gap: 8px;
   }
   .ico {
     height: 32px;

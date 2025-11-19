@@ -38,7 +38,7 @@ var gh = new MW_GitHub();
 gh.getStats().then(stats => {
 
   // Update stats
-  $('#stats-org-count').html(stats.org_total);
+  $('#stats-org-count').html(stats.org_total + 1);
   $('#stats-repo-count').html(stats.repo_total);
   $('#stats-ctrb-count').html(stats.ctrb_total);
 

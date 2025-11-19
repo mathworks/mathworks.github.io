@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+	 width="150px" height="150px" viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1877F2;}
+	.st1{fill:#FFFFFF;}
+</style>
 <g>
-	<path id="Blue_1_" fill="#3B5998" d="M30.2,32c1,0,1.8-0.8,1.8-1.8V1.8c0-1-0.8-1.8-1.8-1.8H1.8C0.8,0,0,0.8,0,1.8v28.5
-		c0,1,0.8,1.8,1.8,1.8H30.2z"/>
-	<path id="f" fill="#FFFFFF" d="M22.1,32V19.6h4.2l0.6-4.8h-4.8v-3.1c0-1.4,0.4-2.4,2.4-2.4l2.6,0V5c-0.4-0.1-2-0.2-3.7-0.2
-		c-3.7,0-6.2,2.3-6.2,6.4v3.6h-4.2v4.8h4.2V32H22.1z"/>
+	<path class="st0" d="M150,75c0-41.4-33.6-75-75-75S0,33.6,0,75c0,37.4,27.4,68.5,63.3,74.1V96.7h-19V75h19V58.5
+		c0-18.8,11.2-29.2,28.3-29.2c8.2,0,16.8,1.5,16.8,1.5v18.5h-9.5c-9.3,0-12.2,5.8-12.2,11.7V75h20.8l-3.3,21.7H86.7v52.4
+		C122.6,143.5,150,112.4,150,75z"/>
+	<path class="st1" d="M104.2,96.7l3.3-21.7H86.7V60.9c0-5.9,2.9-11.7,12.2-11.7h9.5V30.8c0,0-8.6-1.5-16.8-1.5
+		c-17.1,0-28.3,10.4-28.3,29.2V75h-19v21.7h19v52.4c3.8,0.6,7.7,0.9,11.7,0.9s7.9-0.3,11.7-0.9V96.7H104.2z"/>
 </g>
 </svg>

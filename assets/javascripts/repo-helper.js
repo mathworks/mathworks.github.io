@@ -14,7 +14,8 @@
                   'thingspeak': 'ThingSpeak',
 		              'MathWorks-Teaching-Resources': 'Teaching Resources',
 		              'MATLAB-Graphics-and-App-Building': 'Graphics and App Building',
-		              'simscape': 'Simscape'	    
+		              'simscape': 'Simscape',
+                  'matlab': 'MATLAB Development & AI Coding Projects'	    
                 };
     this.ignore_list = [ 'xilinx-linux', 'buildroot', 'xilinx-uboot', 'altera-linux', 'altera-uboot' ];
     this.contributors = {};
