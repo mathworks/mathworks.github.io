@@ -17,7 +17,7 @@
 		              'simscape': 'Simscape',
                   'matlab': 'MATLAB Development & AI Coding Projects'	    
                 };
-    this.ignore_list = [ 'xilinx-linux', 'buildroot', 'xilinx-uboot', 'altera-linux', 'altera-uboot' ];
+    this.ignore_list = [ 'xilinx-linux', 'buildroot', 'xilinx-uboot', 'altera-linux', 'altera-uboot', '.github' ];
     this.contributors = {};
     this.stats = {};
   }
@@ -73,7 +73,7 @@
         if (Array.isArray(org)) {
           org.forEach(function(r) {
             var _org = r.full_name ? r.full_name.split('/')[0] : r.name;
-            if (r.name != 'mathworks.github.io')
+            if (r.name != 'mathworks.github.io' && !ignore.includes(r.name))
               repos.push({
                 is_fork: r.fork,
                 org: _org,
