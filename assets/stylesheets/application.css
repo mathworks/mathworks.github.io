@@ -43,6 +43,8 @@ a:hover{
   background-size: 1024px;
   height: 280px;
   border-radius: 0;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
 }
 .nav-item {
   padding-left: 32px;
@@ -71,8 +73,9 @@ a:hover{
 }
 
 .contrib_card {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #D5D5D5;
+  border-radius: 4px;
   padding: 15px;
 }
 
@@ -86,18 +89,78 @@ a:hover{
   width: 40px;
 }
 
-.repo_card {
+.featured_section {
+  background-color: #eef4f8;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  scroll-margin-top: 60px;
+}
+
+.featured_section h2 {
+  color: #333;
+}
+
+.featured_section p {
+  margin-bottom: 0;
+}
+
+.featured_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 15px;
   margin: 15px;
-  height: 14rem;
+  min-height: 14rem;
+  border: 1px solid #0076A8;
+  border-top: 4px solid #0076A8;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.featured_badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #0076A8;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+.repo_card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 15px;
+  min-height: 14rem;
   border: 1px solid lightgrey;
   border-top: 4px solid #d78825;
   border-radius: 4px;
-  overflow: hidden;
 }
 
 .org_card {
   margin: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  min-height: 8rem;
+}
+
+.repo_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.repo_lang {
+  flex-shrink: 0;
+  margin-left: 10px;
 }
 
 .repo_title {
@@ -107,15 +170,9 @@ a:hover{
 }
 
 .repo_stats {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
 }
 
 .repo_updated {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
 }
 
 .repo_org {
@@ -129,6 +186,15 @@ a:hover{
 
 .repo_description {
   overflow: hidden;
+  flex: 1;
+}
+
+.repo_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 #orgsCollapsible {

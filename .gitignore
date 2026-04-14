@@ -7,3 +7,5 @@ package-lock.json
 .DS_Store?
 ._*
 .env
+screenshots/
+.playwright-mcp/
