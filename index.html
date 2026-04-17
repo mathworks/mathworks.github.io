@@ -128,7 +128,7 @@
       <div class="row">
         <div class="col-md-12 my-3">
           <h2><strong>Featured Projects</strong></h2>
-          <p>Tools for building agentic AI workflows, connecting LLMs, and integrating MATLAB with AI coding assistants.</p>
+          <p>Tools for building agentic AI workflows, connecting LLMs, and integrating MATLAB and Simulink with AI coding assistants.</p>
         </div>
       </div>
       <div class="row px-0" id="featured">
@@ -200,7 +200,6 @@
   <script id="featuredTemplate" type="x-tmpl-mustache">
     <div class="col-sm-12 col-md-6 col-lg-4 mx-0 px-0">
       <div class="featured_card">
-        <span class="featured_badge">Featured</span>
         <div class="repo_title"><strong>
         <a href="{u{ url }u}">{u{ name }u}</a></strong></div>
         <div class="repo_description">{u{ description }u}</div>
@@ -260,10 +259,28 @@
           org: "MATLAB Development & AI Coding Projects"
         }));
         $('#featured').append(Mustache.render(featuredTemplate, {
+          name: "Simulink Agentic Toolkit",
+          description: "Give your AI coding agent the ability to read, build, edit, and test Simulink models using Model-Based Design best practices.",
+          url: "https://github.com/simulink/simulink-agentic-toolkit",
+          org: "Simulink"
+        }));
+        $('#featured').append(Mustache.render(featuredTemplate, {
           name: "MATLAB MCP Core Server",
           description: "A Model Context Protocol (MCP) server that enables AI coding assistants like Claude, Cursor, and VS Code Copilot to interact with MATLAB.",
           url: "https://github.com/matlab/matlab-mcp-core-server",
           org: "MATLAB Development & AI Coding Projects"
+        }));
+        $('#featured').append(Mustache.render(featuredTemplate, {
+          name: "MATLAB Extension for VS Code",
+          description: "Edit, run, and debug MATLAB code in Visual Studio Code with syntax highlighting, code analysis, navigation support, and more.",
+          url: "https://github.com/mathworks/MATLAB-extension-for-vscode",
+          org: "MathWorks"
+        }));
+        $('#featured').append(Mustache.render(featuredTemplate, {
+          name: "MATLAB Coding Guidelines",
+          description: "Recommended MATLAB coding guidelines for teams and organizations to introduce regularity and consistency in their MATLAB code bases.",
+          url: "https://github.com/mathworks/MATLAB-Coding-Guidelines",
+          org: "MathWorks"
         }));
         $('#featured').append(Mustache.render(featuredTemplate, {
           name: "LLMs with MATLAB",
@@ -278,14 +295,29 @@
           url: "https://www.github.com/mathworks"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "MATLAB Development & AI Coding Projects",
+          description: "Development tools for MATLAB developers, including AI Prompts, skills, rules, commands, and MCP tools for agentic workflows.",
+          url: "https://github.com/matlab"
+        }));
+        $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "Simulink",
+          description: "Simulink is a block diagram environment used to design systems with multidomain models, simulate before moving to hardware, and deploy without writing code.",
+          url: "https://github.com/simulink"
+        }));
+        $('#orgs').append(Mustache.render(orgTemplate, {
           name: "Reference Architectures",
           description: "Templates for running MATLAB and related products in the public cloud and interfaces with third party technologies.",
           url: "https://www.github.com/mathworks-ref-arch"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
-          name: "Teaching Resources",
-          description: "A collection of curriculum materials for educators using MATLAB and Simulink.",
-          url: "https://github.com/MathWorks-Teaching-Resources"
+          name: "Simscape",
+          description: "Design physical systems using simulation with Simscape.",
+          url: "https://github.com/simscape"
+        }));
+        $('#orgs').append(Mustache.render(orgTemplate, {
+          name: "Deep Learning",
+          description: "Deep learning resources, including pretrained neural network models.",
+          url: "https://github.com/matlab-deep-learning"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
           name: "Graphics and App Building",
@@ -293,9 +325,9 @@
           url: "https://github.com/MATLAB-Graphics-and-App-Building"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
-          name: "Deep Learning",
-          description: "Deep learning resources, including pretrained neural network models.",
-          url: "https://github.com/matlab-deep-learning"
+          name: "Teaching Resources",
+          description: "A collection of curriculum materials for educators using MATLAB and Simulink.",
+          url: "https://github.com/MathWorks-Teaching-Resources"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
           name: "Robotics",
@@ -312,17 +344,7 @@
           description: "IoT projects, hardware libraries, examples, and MATLAB apps for ThingSpeak.",
           url: "https://github.com/thingspeak"
         }));
-        $('#orgs').append(Mustache.render(orgTemplate, {
-          name: "Simscape",
-          description: "Design physical systems using simulation with Simscape.",
-          url: "https://github.com/simscape"
-        }));
-        $('#orgs').append(Mustache.render(orgTemplate, {
-          name: "MATLAB Development & AI Coding Projects",
-          description: "Development tools for MATLAB developers, including AI Prompts, skills, rules, commands, and MCP tools for agentic workflows.",
-          url: "https://github.com/matlab"
-        }));
-        
+
       }
       
       $.getScript('assets/javascripts/repo-helper.js', function() {

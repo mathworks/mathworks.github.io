@@ -7,15 +7,16 @@
     this.index = 0;
     this.orgs = {
                   'mathworks': 'MathWorks',
+                  'matlab': 'MATLAB Development & AI Coding Projects',
+                  'simulink': 'Simulink',
                   'mathworks-ref-arch': 'Reference Architecture',
-                  'MathWorks-SimBiology': 'SimBiology',
+                  'simscape': 'Simscape',
                   'matlab-deep-learning' : 'Deep Learning',
+                  'MATLAB-Graphics-and-App-Building': 'Graphics and App Building',
+                  'MathWorks-Teaching-Resources': 'Teaching Resources',
                   'mathworks-robotics' : 'Robotics',
-                  'thingspeak': 'ThingSpeak',
-		              'MathWorks-Teaching-Resources': 'Teaching Resources',
-		              'MATLAB-Graphics-and-App-Building': 'Graphics and App Building',
-		              'simscape': 'Simscape',
-                  'matlab': 'MATLAB Development & AI Coding Projects'	    
+                  'MathWorks-SimBiology': 'SimBiology',
+                  'thingspeak': 'ThingSpeak'
                 };
     this.ignore_list = [ 'xilinx-linux', 'buildroot', 'xilinx-uboot', 'altera-linux', 'altera-uboot', '.github' ];
     this.contributors = {};
