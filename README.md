@@ -4,6 +4,10 @@ The source for the [mathworks.github.io](https://mathworks.github.io) landing pa
 
 This readme covers basic maintenance tasks for the page owner.
 
+## Agent resources
+
+[MATLAB and Simulink R2026b for Coding Agents](releases/R2026b.md): documentation, toolkits, MCP setup, R2026b workflows, validation, and support.
+
 ## Local development
 
 The site is static HTML/JS, so any local web server works. Two convenient options:
