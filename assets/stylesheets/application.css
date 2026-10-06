@@ -51,6 +51,10 @@ a:hover{
   font-size: 14px;
   color: #333;
 }
+/* Bootstrap's navbar-light link gray (rgba(0,0,0,.5)) is 4.0:1 on white; #666 is 5.7:1 (WCAG AA) */
+.navbar-light .navbar-nav .nav-link {
+  color: #666;
+}
 /*.nav-link {
   padding: 0px !important;
 }*/
@@ -253,6 +257,18 @@ a { font-family: Arial, sans-serif; color: #0076A8; }
   .footernav a{padding:0 8px;display:block}
   .footernav li:first-child a{padding-left:0}
   .footernav li:last-child a{padding-right:0}
+}
+
+/* Mobile section toggles: the heading wraps the button (a button may contain only inline content) */
+.collapse_heading {
+  margin: 0;
+}
+.collapse_title {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #333;
 }
 
 /* Responsive expand/collapse arrow */

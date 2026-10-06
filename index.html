@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MathWorks Open Source on GitHub - MATLAB & Simulink</title>
+<title>MathWorks Open Source on GitHub - MATLAB &amp; Simulink</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Description" content="MATLAB Open Source projects from MathWorks including, including MATLAB, Simulink, Reference Architecture, SimBiology, and ThingSpeak">
+<meta name="Description" content="Open source projects from MathWorks, including MATLAB, Simulink, Reference Architecture, SimBiology, and ThingSpeak">
 <meta name="Keywords" content="matlab open source simulink simbiology thingspeak mathworks github">
-<meta property="og:image" content="http://mathworks.github.io/assets/images/logo.png">
+<meta property="og:image" content="https://mathworks.github.io/assets/images/logo.png">
 <meta property="og:image:secure_url" content="https://mathworks.github.io/assets/images/logo.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="897">
@@ -48,12 +49,12 @@
 </script>
 <nav class="navbar sticky-top bg-white navbar-expand-lg navbar-light ">
   <div class="container px-0 mx-auto">
-  <a class="navbar-brand" href="#" onclick="$(window).scrollTop(0);"><img src="assets/images/pic-header-mathworks-logo.svg" height="28px" alt="MathWorks Open Source Projects"> <span class="open_source_title"></span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="#" onclick="$(window).scrollTop(0);"><img src="assets/images/pic-header-mathworks-logo.svg" height="28" alt="MathWorks Open Source Projects"> <span class="open_source_title"></span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+  <div class="collapse navbar-collapse" id="navbarLinks">
 
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item">
@@ -141,31 +142,31 @@
     </div>
   </div>
 
-  <a name="repositories" class="anchor"></a>
-  <button class="btn d-sm-block bg-white d-md-none col-sm-12 collapsed py-3 text-left border-bottom" type="button" data-toggle="collapse" data-target="#reposCollapsible" aria-expanded="false" aria-controls="reposCollapsible">
-    <h2 class="d-inline">Active Repositories</h2> <div class="float-right mx-4"><i class="collapse_arrow"></i></div>
-  </button>
+  <a id="repositories" class="anchor"></a>
+  <h2 class="collapse_heading d-md-none">
+    <button class="btn d-block bg-white col-sm-12 collapsed py-3 text-left border-bottom" type="button" data-toggle="collapse" data-target="#reposCollapsible" aria-expanded="false" aria-controls="reposCollapsible"><span class="collapse_title">Active Repositories</span> <span class="float-right mx-4"><i class="collapse_arrow"></i></span></button>
+  </h2>
 
   <div class="container collapse expand-sm" id="reposCollapsible">
    <div class="row">
      <div class="dropdown show d-md-none col-sm-12">
-      <a id="sortBtn1" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a id="sortBtn1" class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Most Active
       </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#" onclick="sortActive()">Most Active</a>
-        <a class="dropdown-item" href="#" onclick="sortStars()">Most Stars</a>
+      <div class="dropdown-menu" aria-labelledby="sortBtn1">
+        <button class="dropdown-item" type="button" onclick="sortActive()">Most Active</button>
+        <button class="dropdown-item" type="button" onclick="sortStars()">Most Stars</button>
       </div>
      </div>
      <div class="d-none d-md-block col-md-12">
        <!-- Sort Direction -->
        <div class="dropdown show float-right mt-3">
-        <a id="sortBtn2" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a id="sortBtn2" class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Most Active
         </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#" onclick="sortActive()">Most Active</a>
-          <a class="dropdown-item" href="#" onclick="sortStars()">Most Stars</a>
+        <div class="dropdown-menu" aria-labelledby="sortBtn2">
+          <button class="dropdown-item" type="button" onclick="sortActive()">Most Active</button>
+          <button class="dropdown-item" type="button" onclick="sortStars()">Most Stars</button>
         </div>
       </div>
       <h2 class="mt-3">Active Repositories</h2>
@@ -182,10 +183,10 @@
     </div>
   </div>
 
-  <a name="organizations" class="anchor"></a>
-  <button class="btn bg-white d-sm-block d-md-none col-sm-12 collapsed py-3 text-left border-bottom" type="button" data-toggle="collapse" data-target="#orgsCollapsible" aria-expanded="false" aria-controls="orgsCollapsible">
-    <h2 class="d-inline">Organizations</h2> <div class="float-right mx-4"><i class="collapse_arrow"></i></div>
-  </button>
+  <a id="organizations" class="anchor"></a>
+  <h2 class="collapse_heading d-md-none">
+    <button class="btn d-block bg-white col-sm-12 collapsed py-3 text-left border-bottom" type="button" data-toggle="collapse" data-target="#orgsCollapsible" aria-expanded="false" aria-controls="orgsCollapsible"><span class="collapse_title">Organizations</span> <span class="float-right mx-4"><i class="collapse_arrow"></i></span></button>
+  </h2>
 
   <div class="collapse expand-sm" id="orgsCollapsible">
     <div class="container">
@@ -265,7 +266,7 @@
         $('#featured').append(Mustache.render(featuredTemplate, {
           name: "Simulink Agentic Toolkit",
           description: "Give your AI coding agent the ability to read, build, edit, and test Simulink models using Model-Based Design best practices.",
-          url: "https://github.com/simulink/simulink-agentic-toolkit",
+          url: "https://github.com/matlab/simulink-agentic-toolkit",
           org: "Simulink"
         }));
         $('#featured').append(Mustache.render(featuredTemplate, {
@@ -296,7 +297,7 @@
         $('#orgs').append(Mustache.render(orgTemplate, {
           name: "MathWorks",
           description: "A diverse selection of MathWorks projects and resources",
-          url: "https://www.github.com/mathworks"
+          url: "https://github.com/mathworks"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
           name: "MATLAB Development & AI Coding Projects",
@@ -311,7 +312,7 @@
         $('#orgs').append(Mustache.render(orgTemplate, {
           name: "Reference Architectures",
           description: "Templates for running MATLAB and related products in the public cloud and interfaces with third party technologies.",
-          url: "https://www.github.com/mathworks-ref-arch"
+          url: "https://github.com/mathworks-ref-arch"
         }));
         $('#orgs').append(Mustache.render(orgTemplate, {
           name: "Simscape",
@@ -454,7 +455,7 @@
           <div class="footer_heading">
             <a href="https://www.mathworks.com">MathWorks</a>
           </div>
-          <i><p>Accelerating the pace of engineering and science</p></i>
+          <p><i>Accelerating the pace of engineering and science</i></p>
 
 
           <ul class="footernav">
@@ -472,6 +473,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 </body>
 </html>

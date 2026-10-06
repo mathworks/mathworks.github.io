@@ -26,7 +26,13 @@ Then open http://localhost:8080.
 python -m http.server 8080
 ```
 
-Opening `index.html` directly via `file://` will not work — the page fetches `cache.json` and `stats.json` over HTTP.
+Python 3.12 or later serves `.md` files as `text/markdown`, so browsers display them.
+Python 3.11 and earlier serve them as `application/octet-stream`, so browsers download them instead.
+
+The page fetches `cache.json` and `stats.json` over HTTP, so it does not work when opened from a `file://` URL.
+
+Local servers show their own error page for missing URLs.
+To review the site's 404 page, open http://localhost:8080/404.html.
 
 ## Featured Projects
 
@@ -52,6 +58,7 @@ To add a release:
 
 1. Add `releases/<release>.md`.
 2. Add a row at the top of the table in both `releases/index.html` and `releases/index.md`, and move the "latest" label to it.
+   In `releases/index.html`, copy the previous row, then update the release name, the Markdown link, the GitHub link, and both checked dates.
 3. Update the Release quick starts section of `llms.txt`.
 4. Update the latest-release link in the Featured Projects section of `index.html`.
 
@@ -66,7 +73,7 @@ Find the block of templates added to the Organizations section. Add a new one in
 $('#orgs').append(Mustache.render(orgTemplate, {
   name: "MathWorks",
   description: "A diverse selection of MathWorks Open Source projects and resources",
-  url: "https://www.github.com/mathworks"
+  url: "https://github.com/mathworks"
 }));
 ```
 
