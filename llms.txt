@@ -1,0 +1,52 @@
+# MathWorks Open Source on GitHub
+
+> MathWorks open source projects on GitHub, and release quick starts that set up coding agents to work with MATLAB and Simulink.
+
+Each release quick start is a Markdown page for one MATLAB and Simulink release.
+It lists the documentation, toolkits, MCP server setup, release changes, and validation steps for that release.
+
+- Use the quick start that matches the MATLAB release you work in.
+  To find the release, run `matlabRelease` in MATLAB.
+- The release index lists every quick start, newest first.
+  Its URL does not change between releases.
+- MathWorks product documentation and release notes are on mathworks.com.
+  The MathWorks llms.txt and the release notes llms.txt index them.
+
+## Release quick starts
+
+- [Release index](https://mathworks.github.io/releases/index.md): Every release quick start, newest first.
+- [MATLAB and Simulink R2026b for Coding Agents](https://mathworks.github.io/releases/R2026b.md): Latest release. Documentation, toolkits, MCP setup, R2026b workflows, validation, and support. Checked October 2, 2026.
+
+## Agentic toolkits and MCP
+
+- [MATLAB Agentic Toolkit](https://github.com/matlab/matlab-agentic-toolkit): Connect MATLAB to AI agents and agentic frameworks. Provides tools for AI assistants to run MATLAB code, analyze data, and create visualizations.
+- [Simulink Agentic Toolkit](https://github.com/matlab/simulink-agentic-toolkit): Give your AI coding agent the ability to read, build, edit, and test Simulink models using Model-Based Design best practices.
+- [Polyspace Agentic Toolkit](https://github.com/mathworks/polyspace-agentic-toolkit): Analyze and test C/C++, including generated code, with installed Polyspace products.
+- [MATLAB MCP Server](https://github.com/matlab/matlab-mcp-server): A Model Context Protocol (MCP) server that enables AI coding assistants like Claude Code, Cursor, Codex, and GitHub Copilot to interact with MATLAB.
+- [MATLAB AI coding rules](https://github.com/matlab/rules): MATLAB coding rules and guidelines for AI coding assistants like Cursor, Windsurf, Claude Code, and GitHub Copilot.
+
+## MathWorks documentation
+
+- [MathWorks llms.txt](https://www.mathworks.com/llms.txt): Products, documentation, learning, and community.
+- [Release notes llms.txt](https://www.mathworks.com/help/relnotes/llms.txt): Product release notes in Markdown.
+
+## GitHub organizations
+
+- [MathWorks](https://github.com/mathworks): A diverse selection of MathWorks projects and resources.
+- [MATLAB Development & AI Coding Projects](https://github.com/matlab): Development tools for MATLAB developers, including AI prompts, skills, rules, commands, and MCP tools for agentic workflows.
+- [Simulink](https://github.com/simulink): Simulink is a block diagram environment used to design systems with multidomain models, simulate before moving to hardware, and deploy without writing code.
+- [Reference Architectures](https://github.com/mathworks-ref-arch): Templates for running MATLAB and related products in the public cloud and interfaces with third party technologies.
+- [Simscape](https://github.com/simscape): Design physical systems using simulation with Simscape.
+- [Deep Learning](https://github.com/matlab-deep-learning): Deep learning resources, including pretrained neural network models.
+- [Graphics and App Building](https://github.com/MATLAB-Graphics-and-App-Building): A collection of charts, UI components, and utilities to supplement your data visualization and app building needs.
+- [Teaching Resources](https://github.com/MathWorks-Teaching-Resources): A collection of curriculum materials for educators using MATLAB and Simulink.
+- [Robotics](https://github.com/mathworks-robotics): Robotics and autonomous systems resources, including educational content, examples, and utilities.
+- [SimBiology](https://github.com/mathworks-simbiology): SimBiology resources, including models and analysis tools, for Quantitative Systems Pharmacology (QSP), Physiologically-Based Pharmacokinetics (PBPK), and Pharmacokinetics/Pharmacodynamics (PK/PD).
+- [ThingSpeak](https://github.com/thingspeak): IoT projects, hardware libraries, examples, and MATLAB apps for ThingSpeak.
+
+## Optional
+
+- [MATLAB Extension for VS Code](https://github.com/mathworks/MATLAB-extension-for-vscode): Edit, run, and debug MATLAB code in Visual Studio Code with syntax highlighting, code analysis, navigation support, and more.
+- [MATLAB Coding Guidelines](https://github.com/mathworks/MATLAB-Coding-Guidelines): Recommended MATLAB coding guidelines for teams and organizations to introduce regularity and consistency in their MATLAB code bases.
+- [LLMs with MATLAB](https://github.com/matlab-deep-learning/llms-with-matlab): Connect MATLAB to large language models including OpenAI, Ollama, and Azure. Generate text, extract data, and build AI-powered applications.
+- [Site source](https://github.com/mathworks/mathworks.github.io): Source for mathworks.github.io, including the release quick starts.

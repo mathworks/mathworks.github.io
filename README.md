@@ -6,7 +6,10 @@ This readme covers basic maintenance tasks for the page owner.
 
 ## Agent resources
 
-[MATLAB and Simulink R2026b for Coding Agents](releases/R2026b.md): documentation, toolkits, MCP setup, R2026b workflows, validation, and support.
+- [llms.txt](llms.txt): an index of this site for coding agents.
+- [Release quick starts](releases/): one Markdown quick start per release, newest first.
+  Agents can read the index as [Markdown](releases/index.md).
+- [MATLAB and Simulink R2026b for Coding Agents](releases/R2026b.md): documentation, toolkits, MCP setup, R2026b workflows, validation, and support.
 
 ## Local development
 
@@ -39,6 +42,18 @@ $('#featured').append(Mustache.render(featuredTemplate, {
 ```
 
 The `org` field should match one of the organization display names used below.
+
+## Release quick starts
+
+Each quick start is a Markdown file in `releases/`, named for its release, such as `releases/R2026b.md`.
+The release index (`releases/index.html` and `releases/index.md`) and `llms.txt` give agents URLs that stay the same from release to release.
+
+To add a release:
+
+1. Add `releases/<release>.md`.
+2. Add a row at the top of the table in both `releases/index.html` and `releases/index.md`, and move the "latest" label to it.
+3. Update the Release quick starts section of `llms.txt`.
+4. Update the latest-release link in the Featured Projects section of `index.html`.
 
 ## Organizations
 
